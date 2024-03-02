@@ -20,15 +20,6 @@ const Footer = async ({ isSmall }: FooterProps) => {
       id="donate" // Required to allow scrolling directly to the footer
       className={makeClass(styles.footer, isSmall && styles.small)}
     >
-      <span>{t('donate.info')}</span>
-      <Button
-        isSmall
-        title={t('donate.title')}
-        href="https://ko-fi.com/A06841WZ"
-        target="_blank"
-        rel="noreferrer noopener payment"
-        style={{ whiteSpace: 'nowrap' }}
-      >{t('donate.button')}</Button>
     </footer>
 }
 

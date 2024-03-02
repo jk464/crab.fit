@@ -1,0 +1,25 @@
+name: crab
+services:
+  frontend:
+    container_name: frontend
+    image: crab-frontend:latest
+    networks:
+      default: null
+    ports:
+      - 30000:30000
+    restart: unless-stopped
+    environment:
+      NEXT_PUBLIC_API_URL: http://api:3000
+  api:
+    container_name: api
+    image: crab-api:latest
+    networks:
+      default: null
+    ports:
+      - 127.0.0.1:3000:3000/tcp
+    restart: unless-stopped
+    environment:
+      FRONTEND_URL: http://localhost:30000
+networks:
+  default:
+    name: compose_default
